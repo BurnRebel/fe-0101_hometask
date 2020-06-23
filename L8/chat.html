@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Dosis', sans-serif;
+        }
+        .chat
+        {
+            display: flex;            
+            margin-left: auto;
+            margin-right: auto;
+            flex-flow:column;
+            background: #e7dfd5;
+            width: 50%;
+            height: 70%;
+        }
+        .friend
+        {
+            background-color: #84a9ac;
+
+            margin-left: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: auto;
+
+            width: 40%;
+            padding: 10px;
+            border-radius:  20px;
+        }
+        .me
+        {
+            background-color: #3b6978;
+            color: white;
+
+            text-align: right;    
+            margin-left: auto;  
+
+            margin-right: 5px;   
+            margin-bottom: 5px;   
+            margin-top: 5px;
+            width: 40%;
+            padding: 10px;
+
+            border-radius:  20px;
+        }
+        .input
+        {
+            border-color: #e7dfd5;
+            background-color:  #e7dfd5;
+            display: block;
+            margin:auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 5px;
+            width: 49%;
+        }
+        .user
+        {
+            width: 50%;
+            margin:auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 20px;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            background-color:#204051 ;
+        }
+    </style>
+</head>
+<body>
+    <div class = "user" id = "user">-</div>
+    <div class = "chat" id="box">
+        <div class = "friend">
+            sure!
+        </div>
+        <div class = "me">
+            Nice to meet u
+        </div>
+        <div class = "me">
+            Do u have any plans?
+        </div>
+        <div class = "friend">
+            hmmm
+        </div>
+        <div class = "friend">
+            i gonna go walk
+        </div>
+
+
+    </div>
+    <input class = "input" type="Your text">
+
+    <script>
+        let CHAT = [
+            {
+                message: "Hi, Alex!",
+                isMyMessage: true
+            },
+            {
+                
+                message: "What's up?",
+                isMyMessage: true,
+            },
+            {
+                user:"Alex",
+                message: "Hello",
+                isMyMessage: false,
+            },
+            {
+                user:"Alex",
+                message: "It was terrible day, sorry",
+                isMyMessage: false,
+            },
+            {
+                message: "Do u have any plans?",
+                isMyMessage: true,
+            },
+            {
+                user:"Alex",
+                message: "Yes, i'm busy today. I gotta go to the shop",
+                isMyMessage: false,
+            },
+        ];
+        const change = function(array)
+            {
+                let chat = document.getElementById("box");
+                let new_chat = "";
+                array.forEach(element => {
+                    new_chat+= `
+                    <div class = ${element.isMyMessage?"me":"friend"}>
+                            ${element.message}
+                     </div>
+                    `;
+                });
+                chat.innerHTML = new_chat;
+            };
+            change(CHAT);
+
+             const change_user = function(array)
+             {
+                 let user = document.getElementById("user");
+                 let new_user="";
+                array.forEach(elem => {
+                    if(!elem.isMyMessage)                
+                         new_user =  `${elem.user}`;
+                         
+                 });
+                 console.log(user);
+                 user.innerHTML = new_user;
+             };
+            change_user(CHAT);
+    </script>
+</body>
+</html>

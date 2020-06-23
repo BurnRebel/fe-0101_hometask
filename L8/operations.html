@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    <title>L8</title>
+<style>
+  
+    .operations
+    {
+        display:flex;
+        background-color: #32e0c4;
+        font-family: 'Dosis', sans-serif;
+        justify-content:space-around ;
+        margin:0;   
+        padding: 10px;
+        margin: 20px;
+        width: 200px;
+        border-radius: 10px;
+
+    }
+    .numbers
+    {
+       
+        display: inline-flex;   
+        background-color: #393e46;
+        color: #eeeeee;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .numbers:first-child
+    {
+        width: 80px;
+        
+    }
+    .numbers:last-child
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #222831;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+   <div id="operations" >
+
+       <div class = "operations" >
+           <div class = "numbers">1+2+(3/3)</div>
+           <div class = "numbers">4</div>
+        </div>
+        
+        <div class = "operations" >
+            <div class = "numbers">1+2+(3/3)</div>
+            <div class = "numbers">4</div>
+        </div>
+    </div>
+
+        <script>
+            
+            UserOper = [
+                {
+                    operation: "1+2+(3/3)",
+                    result: "4"
+                },
+                {
+                    operation: "(4-8)^2)",
+                    result: "16"
+                },
+                {
+                    operation: "(16-4)/(5-3)",
+                    result: "6"
+                },
+                {
+                    operation: "6*2+3",
+                    result: "15"
+                },
+                {
+                    operation: "15/5",
+                    result: "3"
+                },
+            ];
+           
+            const change = function(array)
+            {
+                let operations = document.getElementById("operations");
+                let new_operations = "";
+                array.forEach(element => {
+                    new_operations+= `
+                    <div class = "operations" id="operations" >
+                            <div class = "numbers">${element.operation}</div>
+                            <div class = "numbers">${element.result}</div>
+                    </div>
+                    `;
+                });
+                operations.innerHTML = new_operations;
+            };
+            change(UserOper);
+           
+        </script>
+</body>
+</html>
