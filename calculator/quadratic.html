@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <title>Quadratic</title>
+    <style>
+         body
+        {
+            font-family: 'Dosis', sans-serif;
+            font-size: 16px;
+            margin:0;
+        }
+        * 
+        {
+            box-sizing:border-box;
+        }
+        .intro
+        {
+            width: 100%;
+            height: 100vh;
+            background: url("D:/html/calculator/images/intro3.jpg")center no-repeat;
+            background-size: cover;
+        }
+        .welcom_window
+        {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .header
+        {
+            padding-top: 15px;
+            position: absolute;
+            top:0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        .logo
+        {
+            font-size: 30px;
+            font-weight: 900;
+            font-family: 'Fredoka One', cursive;
+            color: #FFE4C4;
+        }
+        .nav
+        {
+            font-size: 19px;
+            text-transform: uppercase;
+        }
+        .nav_link
+        {
+            display: inline-block;
+            vertical-align: top;
+            margin: 15px;
+            color:#fff;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color .2s linear;
+        }
+        .nav_link:hover
+        {
+            color:wheat;
+        }
+        .menu
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+        .calc
+        {
+            position: absolute;
+        }
+        .form_calc
+        {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;                    
+        }
+        .title_sheet
+        {
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 80px;
+            margin: 0;
+            padding-top:70px;
+        }
+        .text
+        {
+            color:wheat;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .input_qv
+        {
+           
+            font-family: 'Montserrat', sans-serif;
+            width: 50px;
+            font-size: 20px;
+        }
+  
+    </style>
+</head>
+<body>
+    <header class = "header">
+        
+        <div class = "welcom_window">
+            <div class="menu"> 
+                
+                <div class="logo"> DayCalc </div>
+                
+                <nav class = "nav">
+                    <a class="nav_link" href="main.html">Calculator</a>
+                    <a class="nav_link" href="quadratic.html">Quadratic</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <div class = "intro">
+        <div class = "form_calc">
+
+            <div >
+                <h1 class = "title_sheet">Quadratic</h1>
+            </div> 
+
+            <div class="qvd_inputs">
+
+                <input type="input" placeholder="" class="input_qv"> 
+                <p class="text">x <sup>2</sup></p>
+                <input type="input" placeholder="" class="input_qv"> 
+                <p class="text">x</p>
+                <input type="input" placeholder="" class="input_qv"> 
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
